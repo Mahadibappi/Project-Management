@@ -1,28 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BsEyeFill } from "react-icons/bs";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
+import projectData from "../../data/Data";
 
 const Dashboard = () => {
+  useEffect(() => {
+    console.log(projectData);
+  }, []);
   return (
     <div className="max-w-full mx-auto p-6">
       <div>
         <h2 className="text-2xl text-black font-semibold mb-4">Dashboard</h2>
         <div className="flex flex-wrap gap-4 sm:flex-col lg:flex-row text-slate-200">
-          <div className="bg-[#8B5CF6] sm:p-8 xl:p-20 rounded-md w-full sm:w-auto">
+          <div className="bg-[#8B5CF6] sm:p-8 xl:p-20 rounded-md  sm:w-1/2 lg:w-auto">
             <span className="text-4xl font-bold block">5</span>
             <p>Projects</p>
           </div>
-          <div className="bg-[#8B5CF6] p-8 sm:p-8 xl:p-20 rounded-md w-full sm:w-auto">
+          <div className="bg-[#8B5CF6] p-8 sm:p-8 xl:p-20 rounded-md sm:w-1/2 lg:w-auto">
             <span className="text-4xl font-bold block">1</span>
             <p>Completed</p>
           </div>
-          <div className="bg-[#8B5CF6] p-8 sm:p-8 xl:p-20 rounded-md w-full sm:w-auto">
+          <div className="bg-[#8B5CF6] p-8 sm:p-8 xl:p-20 rounded-md sm:w-1/2 lg:w-auto">
             <span className="text-4xl font-bold block">0</span>
             <p>Pending</p>
           </div>
-          <div className="bg-[#8B5CF6] p-8 sm:p-8 xl:p-20 rounded-md w-full sm:w-auto">
+          <div className="bg-[#8B5CF6] p-8 sm:p-8 xl:p-20 rounded-md sm:w-1/2 lg:w-auto">
             <span className="text-4xl font-bold block">4</span>
             <p>Categories</p>
           </div>
