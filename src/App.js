@@ -10,6 +10,8 @@ import Task from "./Pages/Task/Task";
 import NewProject from "./Pages/CreateProject/NewProject";
 import ProjectDetail from "./Pages/ProjectDetail/ProjectDetail";
 import NewTask from "./Pages/NewTask/NewTask";
+import TaskDetail from "./Pages/TaskDetail/TaskDetail";
+import EditTask from "./Pages/EditTask/EditTask";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
             <Route path="/detail" element={<ProjectDetail />} />
             <Route path="/task" element={<Task />} />
             <Route path="/newTask" element={<NewTask />} />
+            <Route path="/taskDetail" element={<TaskDetail />} />
+            <Route path="/editTask" element={<EditTask />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
           </Route>

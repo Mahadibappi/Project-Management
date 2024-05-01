@@ -81,14 +81,16 @@ const Task = () => {
                   <td class="p6-6 py-4">Progress</td>
                   <td class="px-6 py-4">
                     <div className="flex gap-3 ">
-                      <Link to="/detail">
+                      <Link to="/taskDetail">
                         <button className="mt-2">
                           <BsEyeFill className="w-6 h-6" />
                         </button>
                       </Link>
-                      <button>
-                        <FaEdit className="w-5 h-6" />
-                      </button>
+                      <Link to="/editTask">
+                        <button className="mt-2">
+                          <FaEdit className="w-5 h-6" />
+                        </button>
+                      </Link>
                       <button>
                         <MdDelete className="w-5 h-6 text-red-600" />
                       </button>
