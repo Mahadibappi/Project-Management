@@ -3,9 +3,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Image from "../assets/login2.jpg";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 const Login = () => {
   const navigate = useNavigate();
-
+  const [visible, setVisible] = useState("");
   //   const handleChange = (e) => {
   //     setFormData({
   //       ...formData,
@@ -69,15 +70,15 @@ const Login = () => {
 
               <label
                 htmlFor="email"
-                className="absolute left-1/3 top-0 flex h-full transform items-center pl-2 text-base transition-all duration-300 group-focus-within:-top-7 group-focus-within:h-1/2 group-focus-within:pl-0 group-focus-within:text-base group-focus-within:text-white peer-valid:-top-7 peer-valid:h-1/2 peer-valid:pl-0 peer-valid:text-base peer-valid:text-white"
+                className="absolute left-1/3 top-0 flex h-full transform items-center pl-2 text-base transition-all duration-300 group-focus-within:-top-7 group-focus-within:h-1/2 group-focus-within:pl-0 group-focus-within:text-base group-focus-within:text-slate-900 peer-valid:-top-7 peer-valid:h-1/2 peer-valid:pl-0 peer-valid:text-base peer-valid:text-slate-900"
               >
                 Email
               </label>
             </div>
             <div className="group relative">
               <input
-                // type={visible ? "text" : "password"}
-                // id="password"
+                type={visible ? "text" : "password"}
+                id="password"
                 // onChange={handleChange}
                 required
                 className="peer h-12 w-full rounded-3xl bg-gray-100 px-4 text-sm outline-none"
@@ -86,20 +87,19 @@ const Login = () => {
                 htmlFor="password"
                 className="absolute left-1/3 top-0 flex h-full transform items-center pl-2 text-base transition-all duration-300 group-focus-within:-top-7 group-focus-within:h-1/2 group-focus-within:pl-0 group-focus-within:text-base group-focus-within:text-white peer-valid:-top-7 peer-valid:h-1/2 peer-valid:pl-0 peer-valid:text-base peer-valid:text-white"
               >
-                Password
-                {/* { {visible ? ( }
-                <AiOutlineEye
-                  size={20}
-                  className=" mx-20 "
-                   onClick={() => setVisible(false)}
-                />
+                {visible ? (
+                  <AiOutlineEye
+                    size={20}
+                    className=" mx-20 "
+                    onClick={() => setVisible(false)}
+                  />
                 ) : (
-                <AiOutlineEyeInvisible
-                  size={20}
-                  className=" mx-20 "
-                   onClick={() => setVisible(true)}
-                />
-                )} */}
+                  <AiOutlineEyeInvisible
+                    size={20}
+                    className=" mx-20 "
+                    onClick={() => setVisible(true)}
+                  />
+                )}
               </label>
             </div>
             <button
