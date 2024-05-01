@@ -86,7 +86,7 @@ const Overview = () => {
                           <BsEyeFill className="w-6 h-6" />
                         </button>
                       </Link>
-                      <Link to="/create">
+                      <Link to="/editProject">
                         <button className="mt-2">
                           <FaEdit className="w-5 h-6" />
                         </button>

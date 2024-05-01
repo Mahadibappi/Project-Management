@@ -12,6 +12,7 @@ import ProjectDetail from "./Pages/ProjectDetail/ProjectDetail";
 import NewTask from "./Pages/NewTask/NewTask";
 import TaskDetail from "./Pages/TaskDetail/TaskDetail";
 import EditTask from "./Pages/EditTask/EditTask";
+import EditProject from "./Pages/EditProject/EditProject";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/overview" element={<Overview />} />
             <Route path="/create" element={<NewProject />} />
             <Route path="/detail" element={<ProjectDetail />} />
+            <Route path="/editProject" element={<EditProject />} />
             <Route path="/task" element={<Task />} />
             <Route path="/newTask" element={<NewTask />} />
             <Route path="/taskDetail" element={<TaskDetail />} />
