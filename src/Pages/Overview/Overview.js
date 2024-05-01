@@ -80,10 +80,12 @@ const Overview = () => {
                   </td>
                   <td class="p6-6 py-4">Pending</td>
                   <td class="px-6 py-4">
-                    <div className="flex gap-3">
-                      <button>
-                        <BsEyeFill className="w-6 h-6" />
-                      </button>
+                    <div className="flex gap-3 ">
+                      <Link to="/detail">
+                        <button className="mt-2">
+                          <BsEyeFill className="w-6 h-6" />
+                        </button>
+                      </Link>
                       <button>
                         <FaEdit className="w-5 h-6" />
                       </button>
