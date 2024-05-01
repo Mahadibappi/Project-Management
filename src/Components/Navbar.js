@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -15,7 +16,9 @@ const Navbar = () => {
             className="input input-bordered w-24 md:w-auto"
           />
         </div>
-        <button className="btn bg-blue-700">Login</button>
+        <Link to="/login">
+          <button className="btn bg-blue-700">Login</button>
+        </Link>
       </div>
     </div>
   );

@@ -1,13 +1,14 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
+import Login from "./Components/Login";
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route></Route>
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>
