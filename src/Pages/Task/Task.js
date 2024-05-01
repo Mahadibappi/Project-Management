@@ -13,7 +13,7 @@ const Task = () => {
           <h4>Task Information</h4>
         </div>
         <div className="pr-12 mr-12">
-          <Link to="/create">
+          <Link to="/newTask">
             <button className="btn btn-success font-semibold">
               Assign New Task
             </button>

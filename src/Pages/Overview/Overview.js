@@ -86,9 +86,11 @@ const Overview = () => {
                           <BsEyeFill className="w-6 h-6" />
                         </button>
                       </Link>
-                      <button>
-                        <FaEdit className="w-5 h-6" />
-                      </button>
+                      <Link to="/create">
+                        <button className="mt-2">
+                          <FaEdit className="w-5 h-6" />
+                        </button>
+                      </Link>
                       <button>
                         <MdDelete className="w-5 h-6 text-red-600" />
                       </button>
