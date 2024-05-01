@@ -1,22 +1,28 @@
 import React from "react";
+import { BsEyeFill } from "react-icons/bs";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Overview = () => {
   return (
     <div>
       {/* head section */}
-      <section className="text-2xl flex justify-around text-slate-800">
+      <section className="text-2xl flex justify-between text-slate-800">
         <div className="p-3 font-semibold">
           <h4>Project Information</h4>
         </div>
-        <div className="">
-          <button className="btn btn-success font-semibold">
-            Crate New Project
-          </button>
+        <div className="pr-12 mr-12">
+          <Link to="/create">
+            <button className="btn btn-success font-semibold">
+              Crate New Project
+            </button>
+          </Link>
         </div>
       </section>
       {/* head section end */}
       <section>
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5 pt-3">
           <div class="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
               <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -45,7 +51,7 @@ const Overview = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700  ">
                   <td class="w-4 p-4">
                     <div class="flex items-center">
                       <input
@@ -60,24 +66,30 @@ const Overview = () => {
                   </td>
                   <th
                     scope="row"
-                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
                     HR Management
                   </th>
-                  <td class="px-6 py-4">Anderson</td>
-                  <td class="px-6 py-4">Software</td>
-                  <td class="px-6 py-4">
+                  <td class="px-4 py-4">Anderson</td>
+                  <td class="px-4 py-4">Software</td>
+                  <td class="px-4 py-4">
                     <div className="flex flex-col">
-                      <span>01/01/24 </span>
+                      <span>01/01/24 To</span>
                       <span>06/01/24 </span>
                     </div>
                   </td>
-                  <td class="px-6 py-4">Pending</td>
+                  <td class="p6-6 py-4">Pending</td>
                   <td class="px-6 py-4">
                     <div className="flex gap-3">
-                      <button>vi</button>
-                      <button>ed</button>
-                      <button>del</button>
+                      <button>
+                        <BsEyeFill className="w-6 h-6" />
+                      </button>
+                      <button>
+                        <FaEdit className="w-5 h-6" />
+                      </button>
+                      <button>
+                        <MdDelete className="w-5 h-6 text-red-600" />
+                      </button>
                     </div>
                   </td>
                 </tr>
