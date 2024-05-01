@@ -15,7 +15,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/overview" element={<Overview />} />
             <Route path="/task" element={<Task />} />
             <Route path="/login" element={<Login />} />

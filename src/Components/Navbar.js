@@ -6,9 +6,7 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100 p-6 w-10/12">
       <div className="flex-1">
-        <Link to="/dashboard">
-          <h3 className="text-3xl font-semibold">Project Management</h3>
-        </Link>
+        <h3 className="text-3xl font-semibold">Project Management</h3>
       </div>
       <div className="flex-none gap-6 ">
         <div className="form-control">
