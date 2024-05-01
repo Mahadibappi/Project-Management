@@ -66,7 +66,7 @@ const Overview = () => {
                   </td>
                   <th
                     scope="row"
-                    class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    class="px-4 py-4 whitespace-nowrap text-gray-300"
                   >
                     HR Management
                   </th>

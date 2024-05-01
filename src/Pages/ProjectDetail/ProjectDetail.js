@@ -34,13 +34,13 @@ const ProjectDetail = () => {
         </div>
         <div>
           <h3 class="text-lg font-semibold">Status</h3>
-          <span class="text-gray-700">Completed</span>
+          <span class="text-gray-700 font-bold">Completed</span>
         </div>
       </div>
       <div>
-        <div>
+        <div className="mt-6">
           <h3 class="text-lg font-semibold">Description</h3>
-          <p class="text-gray-700">
+          <p class="text-gray-700 p-2">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quam
             voluptatum, laboriosam atque id assumenda molestias sapiente harum
             quia deserunt?
