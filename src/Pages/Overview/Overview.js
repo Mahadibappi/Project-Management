@@ -3,6 +3,7 @@ import { BsEyeFill } from "react-icons/bs";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
+import data from "../../data/Data";
 
 const Overview = () => {
   return (
@@ -14,8 +15,8 @@ const Overview = () => {
         </div>
         <div className="pr-12 mr-12">
           <Link to="/create">
-            <button className="btn btn-success font-semibold">
-              Crate New Project
+            <button className="btn btn-success text-white font-semibold bg-gradient-to-br from-green-400 to-green-600 hover:from-green-600 hover:to-green-800 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+              Create New Project
             </button>
           </Link>
         </div>
