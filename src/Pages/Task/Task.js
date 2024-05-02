@@ -3,8 +3,27 @@ import { BsEyeFill } from "react-icons/bs";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
-
+import { useState, useEffect } from "react";
+import axios from "axios";
 const Task = () => {
+  const [projectData, setProjectData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchTasktData = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/TaskData");
+        setProjectData(response.data);
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+
+    fetchTasktData();
+  }, []);
   return (
     <div>
       {/* head section */}
@@ -51,52 +70,54 @@ const Task = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700  ">
-                  <td class="w-4 p-4">
-                    <div class="flex items-center">
-                      <input
-                        id="checkbox-table-search-1"
-                        type="checkbox"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                      <label for="checkbox-table-search-1" class="sr-only">
-                        checkbox
-                      </label>
-                    </div>
-                  </td>
-                  <th
-                    scope="row"
-                    class="px-4 py-4  text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    Hospital Management
-                  </th>
-                  <td class="px-4 py-4">Crate Database</td>
-                  <td class="px-4 py-4">Create the database</td>
-                  <td class="px-4 py-4">
-                    <div className="flex flex-col">
-                      <span>06/01/24 To</span>
-                      <span>06/01/24 </span>
-                    </div>
-                  </td>
-                  <td class="p6-6 py-4">Progress</td>
-                  <td class="px-6 py-4">
-                    <div className="flex gap-3 ">
-                      <Link to="/taskDetail">
-                        <button className="mt-2">
-                          <BsEyeFill className="w-6 h-6" />
+                {projectData?.map((data, index) => (
+                  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700  ">
+                    <td class="w-4 p-4">
+                      <div class="flex items-center">
+                        <input
+                          id="checkbox-table-search-1"
+                          type="checkbox"
+                          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
+                        <label for="checkbox-table-search-1" class="sr-only">
+                          checkbox
+                        </label>
+                      </div>
+                    </td>
+                    <th
+                      scope="row"
+                      class="px-4 py-4  text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      {data.projectName}
+                    </th>
+                    <td class="px-4 py-4">{data.task}</td>
+                    <td class="px-4 py-4">{data.subject}</td>
+                    <td class="px-4 py-4">
+                      <div className="flex flex-col">
+                        <span>{data.startDate}</span>
+                        <span>{data.startDate} </span>
+                      </div>
+                    </td>
+                    <td class="p6-6 py-4">Progress</td>
+                    <td class="px-6 py-4">
+                      <div className="flex gap-3 ">
+                        <Link to="/taskDetail">
+                          <button className="mt-2">
+                            <BsEyeFill className="w-6 h-6" />
+                          </button>
+                        </Link>
+                        <Link to="/editTask">
+                          <button className="mt-2">
+                            <FaEdit className="w-5 h-6" />
+                          </button>
+                        </Link>
+                        <button>
+                          <MdDelete className="w-5 h-6 text-red-600" />
                         </button>
-                      </Link>
-                      <Link to="/editTask">
-                        <button className="mt-2">
-                          <FaEdit className="w-5 h-6" />
-                        </button>
-                      </Link>
-                      <button>
-                        <MdDelete className="w-5 h-6 text-red-600" />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
