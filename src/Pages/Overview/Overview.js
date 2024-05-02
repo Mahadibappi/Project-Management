@@ -3,7 +3,6 @@ import { BsEyeFill } from "react-icons/bs";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
-import data from "../../data/Data";
 
 const Overview = () => {
   return (

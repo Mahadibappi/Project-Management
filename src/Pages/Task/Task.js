@@ -14,7 +14,7 @@ const Task = () => {
         </div>
         <div className="pr-12 mr-12">
           <Link to="/newTask">
-            <button className="btn btn-success font-semibold">
+            <button className="btn btn-success text-white font-semibold bg-gradient-to-br from-green-400 to-green-600 hover:from-green-600 hover:to-green-800 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
               Assign New Task
             </button>
           </Link>

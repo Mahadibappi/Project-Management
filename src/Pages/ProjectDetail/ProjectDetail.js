@@ -1,6 +1,25 @@
 import React from "react";
-
+import { useState, useEffect } from "react";
+import axios from "axios";
 const ProjectDetail = () => {
+  const [projectData, setProjectData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProjectData = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/ProjectData");
+        setProjectData(response.data);
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+
+    fetchProjectData();
+  }, []);
   return (
     <div class=" max-w-lg mx-auto text-slate-800 ">
       <div className="flex  gap-7 flex-col">
